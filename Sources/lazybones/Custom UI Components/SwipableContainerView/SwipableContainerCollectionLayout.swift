@@ -1,9 +1,9 @@
 import UIKit
 
 
-class SwipableContainerCollectionLayout: CenteredCollectionViewFlowLayout {
+open class SwipableContainerCollectionLayout: CenteredCollectionViewFlowLayout {
     
-    init(view: UIView, axis: SwipableContainerView.SwipeAxis) {
+    public init(view: UIView, axis: SwipableContainerView.SwipeAxis) {
         super.init()
         
         scrollDirection = axis == .horizontal ? .horizontal : .vertical
@@ -16,7 +16,7 @@ class SwipableContainerCollectionLayout: CenteredCollectionViewFlowLayout {
     }
 
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError()
     }
 }

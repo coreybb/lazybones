@@ -12,23 +12,19 @@ open class SwipableContainerView: UIView {
     
     
     //  MARK: - Internal Properties
-    weak var delegate: SwipableViewContainerDelegate?
-    var axis: SwipeAxis
-    
-    
-    
-    
-    //-----------------------------
-    //  MARK: - Private Properties
-    //-----------------------------
-    private let collectionColor: UIColor
+    public weak var delegate: SwipableViewContainerDelegate?
+    public var axis: SwipeAxis
+    public let scrollIsEnabled: Bool
+    public let collectionColor: UIColor
     private let childViews: [UIView]
+    
+    
+    //  MARK: - Private Properties
     private lazy var collectionView: SwipableContainerCollectionView = SwipableContainerCollectionView(
         view: self,
         cellViews: childViews,
         axis: axis
     )
-    private let scrollIsEnabled: Bool
     private lazy var didLayoutSubviews: Bool = false
     
     
@@ -70,9 +66,7 @@ open class SwipableContainerView: UIView {
     
     
     
-    //-----------------------
-    //  MARK: - Internal API
-    //-----------------------
+    //  MARK: - Public API
     public func scrollToView(at index: Int) {
         
         guard (index <= childViews.count - 1) &&

@@ -5,7 +5,7 @@ import UIKit
 ///
 /// Conform to this protocol to create an enum that represents your custom fonts.
 /// The raw value of each enum case should be the suffix of the font name (e.g., "-Regular", "-Bold").
-public protocol CustomFont: CaseIterable, RawRepresentable<String> {
+public protocol FontAsset: CaseIterable, RawRepresentable<String> {
     
     /// The base name of the font family.
     ///
@@ -32,7 +32,7 @@ public protocol CustomFont: CaseIterable, RawRepresentable<String> {
 
 
 //  MARK: - Default Implementation
-public extension CustomFont {
+public extension FontAsset {
     
     /// Default implementation to create a `UIFont` instance.
     ///
@@ -53,7 +53,7 @@ public extension CustomFont {
 
 
 //  MARK: - Private API
-extension CustomFont {
+extension FontAsset {
     
     /// Handles cases where the specified font is not found.
     ///

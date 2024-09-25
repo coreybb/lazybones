@@ -1,7 +1,7 @@
 import UIKit
 
 
-class SwipableViewCollectionCell: UICollectionViewCell {
+final class SwipableViewCollectionCell: UICollectionViewCell {
     
 
     //  MARK: - Internal Properties

@@ -1,7 +1,7 @@
 import UIKit
 import Combine
 
-protocol KeyboardResponsive: UIView {
+public protocol KeyboardResponsive: UIView {
     var keyboardEventPublisher: KeyboardEventPublishing { get }
     var keyboardResponsiveSubviews: [UIView] { get set }
     var cancellables: Set<AnyCancellable> { get set }
@@ -11,7 +11,7 @@ protocol KeyboardResponsive: UIView {
 
 
 //  MARK: - Default Implementation
-extension KeyboardResponsive {
+public extension KeyboardResponsive {
     
     func setupKeyboardHandling() {
         
@@ -47,7 +47,12 @@ extension KeyboardResponsive {
             }
         }
     }
-    
+}
+
+
+
+//  MARK: - Private API
+extension KeyboardResponsive {
     
     private func performKeyboardResponsiveSubviewsAnimations(_ animations: @escaping () -> Void) {
         UIView.animate(

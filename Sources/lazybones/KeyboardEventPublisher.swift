@@ -1,13 +1,13 @@
 import UIKit
 import Combine
 
-protocol KeyboardEventPublishing {
+public protocol KeyboardEventPublishing {
     var keyboardWillShowPublisher: AnyPublisher<CGFloat, Never> { get }
     var keyboardWillHidePublisher: AnyPublisher<Void, Never> { get }
 }
 
 
-final class KeyboardEventPublisher: KeyboardEventPublishing {
+public final class KeyboardEventPublisher: KeyboardEventPublishing {
     
     
     //  MARK: - Public Properties
@@ -15,21 +15,25 @@ final class KeyboardEventPublisher: KeyboardEventPublishing {
     public lazy var keyboardWillHidePublisher: AnyPublisher<Void, Never> = keyboardWillHideSubject.eraseToAnyPublisher()
     
     
-    
     //  MARK: - Private Properties
     private let keyboardWillShowSubject = PassthroughSubject<CGFloat, Never>()
     private let keyboardWillHideSubject = PassthroughSubject<Void, Never>()
     private var cancellables = Set<AnyCancellable>()
-
     
-
+    
+    
+    
     //  MARK: - Init
-    init() {
+    public init() {
         setupNotificationObservers()
     }
+}
+
+
+//  MARK: - Private API
+extension KeyboardEventPublisher {
     
     
-    //  MARK: - Private API
     private func setupNotificationObservers() {
         setupKeyboardWillShowPublisher()
         setupKeyboardWillHidePublisher()
