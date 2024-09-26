@@ -1,7 +1,7 @@
 import UIKit
 
 
-open class GradientView: UIView {
+open class LazyGradientView: UIView {
     
     
     //----------------------------
@@ -14,7 +14,7 @@ open class GradientView: UIView {
     //  MARK: - Private Properties
     //-----------------------------
     private let colors: [CGColor]
-    private let direction: GradientDirection
+    private let direction: LazyGradientDirection
     private var didLayoutSubviews = false
     
     
@@ -24,7 +24,7 @@ open class GradientView: UIView {
     //---------------
     public init(
         colors: [UIColor],
-        direction: GradientDirection = .leftToRight
+        direction: LazyGradientDirection = .leftToRight
     ) {
         self.colors = colors.map { $0.cgColor }
         self.direction = direction

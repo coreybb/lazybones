@@ -1,11 +1,11 @@
 import UIKit
 
-public protocol ColorAsset: CaseIterable, RawRepresentable<String> {
+public protocol LazyColorAsset: CaseIterable, RawRepresentable<String> {
     /// The folder where the color assets are located.
     ///
     /// Use this to specify a folder structure for your assets.
     /// Defaults to `NoFolder` if not specified.
-    var folder: AssetFolder { get }
+    var folder: LazyAssetFolder { get }
     
     /// The full name of the color asset, including any folder prefix.
     ///
@@ -21,7 +21,7 @@ public protocol ColorAsset: CaseIterable, RawRepresentable<String> {
 }
 
 // MARK: - Default Implementation
-public extension ColorAsset {
+public extension LazyColorAsset {
     /// Default implementation to retrieve `UIColor`.
     var color: UIColor {
         UIColor(named: colorName) ?? defaultColor
@@ -42,7 +42,7 @@ public extension ColorAsset {
 }
 
 // MARK: - Private API
-private extension ColorAsset {
+private extension LazyColorAsset {
     /// Default color to return if the specified color asset is not found.
     var defaultColor: UIColor {
         #if DEBUG

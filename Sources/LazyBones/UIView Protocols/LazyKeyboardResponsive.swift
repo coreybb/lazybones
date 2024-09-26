@@ -1,8 +1,8 @@
 import UIKit
 import Combine
 
-public protocol KeyboardResponsive: UIView {
-    var keyboardEventPublisher: KeyboardEventPublishing { get }
+public protocol LazyKeyboardResponsive: UIView {
+    var keyboardEventPublisher: LazyKeyboardEventPublishing { get }
     var keyboardResponsiveSubviews: [UIView] { get set }
     var cancellables: Set<AnyCancellable> { get set }
     func handleKeyboardWillShow(with height: CGFloat)
@@ -11,7 +11,7 @@ public protocol KeyboardResponsive: UIView {
 
 
 //  MARK: - Default Implementation
-public extension KeyboardResponsive {
+public extension LazyKeyboardResponsive {
     
     func setupKeyboardHandling() {
         
@@ -52,7 +52,7 @@ public extension KeyboardResponsive {
 
 
 //  MARK: - Private API
-extension KeyboardResponsive {
+extension LazyKeyboardResponsive {
     
     private func performKeyboardResponsiveSubviewsAnimations(_ animations: @escaping () -> Void) {
         UIView.animate(

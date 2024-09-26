@@ -1,11 +1,11 @@
 import UIKit
 
 /// A protocol for creating enums that provide easy access to image assets.
-public protocol ImageAsset: CaseIterable, RawRepresentable<String> {
+public protocol LazyImageAsset: CaseIterable, RawRepresentable<String> {
     /// The folder where the image assets are located.
     ///
     /// Use this to specify a folder structure for your assets.
-    var folder: AssetFolder { get }
+    var folder: LazyAssetFolder { get }
     
     /// The `UIImage` instance corresponding to the enum case.
     ///
@@ -21,7 +21,7 @@ public protocol ImageAsset: CaseIterable, RawRepresentable<String> {
 }
 
 // MARK: - Default Implementation
-public extension ImageAsset {
+public extension LazyImageAsset {
     /// Default implementation to retrieve the `UIImage` for the asset.
     ///
     /// This computed property attempts to load the image from the asset catalog.
@@ -40,7 +40,7 @@ public extension ImageAsset {
 }
 
 // MARK: - Private API
-private extension ImageAsset {
+private extension LazyImageAsset {
     /// Handles cases where the specified image asset is not found.
     ///
     /// In debug builds, this triggers a fatal error to catch missing assets early.

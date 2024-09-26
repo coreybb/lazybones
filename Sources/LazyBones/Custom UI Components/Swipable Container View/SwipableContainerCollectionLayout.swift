@@ -1,9 +1,9 @@
 import UIKit
 
 
-open class SwipableContainerCollectionLayout: CenteredCollectionViewFlowLayout {
+open class SwipableContainerCollectionLayout: LazyCenteredCollectionViewFlowLayout {
     
-    public init(view: UIView, axis: SwipableContainerView.SwipeAxis) {
+    public init(view: UIView, axis: LazySwipableContainerView.SwipeAxis) {
         super.init()
         
         scrollDirection = axis == .horizontal ? .horizontal : .vertical

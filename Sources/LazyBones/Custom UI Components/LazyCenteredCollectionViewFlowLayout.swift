@@ -9,7 +9,7 @@ public extension UICollectionView {
 ///   - centeredCollectionViewFlowLayout: The `CenteredCollectionViewFlowLayout` for the `UICollectionView` to be configured with.
     convenience init(
         frame: CGRect = .zero,
-        centeredCollectionViewFlowLayout: CenteredCollectionViewFlowLayout
+        centeredCollectionViewFlowLayout: LazyCenteredCollectionViewFlowLayout
     ) {
         self.init(frame: frame, collectionViewLayout: centeredCollectionViewFlowLayout)
         decelerationRate = UIScrollView.DecelerationRate.fast
@@ -17,7 +17,7 @@ public extension UICollectionView {
 }
 
 /// A `UICollectionViewFlowLayout` that _pages_ and keeps its cells centered, resulting in the _"carousel effect"_
-open class CenteredCollectionViewFlowLayout: UICollectionViewFlowLayout {
+open class LazyCenteredCollectionViewFlowLayout: UICollectionViewFlowLayout {
     
     //  MARK: - Private Properties
     private var lastCollectionViewSize: CGSize = CGSize.zero
@@ -193,7 +193,7 @@ open class CenteredCollectionViewFlowLayout: UICollectionViewFlowLayout {
 
 
 
-private extension CenteredCollectionViewFlowLayout {
+private extension LazyCenteredCollectionViewFlowLayout {
 
     
     func determineProposedRect(

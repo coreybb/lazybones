@@ -4,18 +4,18 @@
 import PackageDescription
 
 let package = Package(
-    name: "lazybones",
+    name: "LazyBones",
     platforms: [
         .iOS(.v14)
     ],
     products: [
         .library(
-            name: "lazybones",
-            targets: ["lazybones"]),
+            name: "LazyBones",
+            targets: ["LazyBones"]),
     ],
     targets: [
         .target(
-            name: "lazybones"),
+            name: "LazyBones"),
 
     ]
 )

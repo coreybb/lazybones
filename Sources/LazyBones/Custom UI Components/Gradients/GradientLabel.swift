@@ -1,7 +1,7 @@
 import UIKit
 
 
-open class LazyGradientLabel: GradientView {
+open class LazyGradientLabel: LazyGradientView {
     
     
     //  MARK: - Public Properties
@@ -21,7 +21,7 @@ open class LazyGradientLabel: GradientView {
         style: (any LazyContentStyle)? = nil,
         text: String,
         colors: [UIColor],
-        gradientDirection: GradientDirection = .leftToRight,
+        gradientDirection: LazyGradientDirection = .leftToRight,
         textAlignment: NSTextAlignment = .center
     ) {
         self.style = style

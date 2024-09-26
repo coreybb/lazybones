@@ -2,7 +2,7 @@ import UIKit
 
 
 /// A protocol that defines the interface for a key-value list view.
-public protocol KeyValueListViewProtocol: UIView {
+public protocol LazyKeyValueListViewProtocol: UIView {
     /// The type of content style used for styling labels.
     associatedtype StyleType: LazyContentStyle
     
@@ -20,7 +20,7 @@ public protocol KeyValueListViewProtocol: UIView {
          secondaryStyle: StyleType?,
          interItemSpacing: CGFloat,
          intraItemSpacing: CGFloat,
-         separatorType: KeyValueListView.SeparatorType,
+         separatorType: LazyKeyValueListView.SeparatorType,
          axis: NSLayoutConstraint.Axis)
     
     /// Inserts a new label pair into the list view.
@@ -46,7 +46,7 @@ public protocol KeyValueListViewProtocol: UIView {
 
 
 
-open class KeyValueListView: UIView {
+open class LazyKeyValueListView: UIView {
     
     // MARK: - Public Properties
     public lazy var parentStackView: LazyVStackView = {
@@ -224,7 +224,7 @@ open class KeyValueListView: UIView {
             return LazyVStackView(
                 views: [
                     stackView,
-                    LineView(orientation: .horizontal, thickness: separatorThickness)
+                    LazyLineView(orientation: .horizontal, thickness: separatorThickness)
                 ],
                 spacing: 8
             )

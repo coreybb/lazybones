@@ -1,13 +1,13 @@
 import UIKit
 import Combine
 
-public protocol KeyboardEventPublishing {
+public protocol LazyKeyboardEventPublishing {
     var keyboardWillShowPublisher: AnyPublisher<CGFloat, Never> { get }
     var keyboardWillHidePublisher: AnyPublisher<Void, Never> { get }
 }
 
 
-public final class KeyboardEventPublisher: KeyboardEventPublishing {
+public final class LazyKeyboardEventPublisher: LazyKeyboardEventPublishing {
     
     
     //  MARK: - Public Properties
@@ -31,7 +31,7 @@ public final class KeyboardEventPublisher: KeyboardEventPublishing {
 
 
 //  MARK: - Private API
-extension KeyboardEventPublisher {
+extension LazyKeyboardEventPublisher {
     
     
     private func setupNotificationObservers() {

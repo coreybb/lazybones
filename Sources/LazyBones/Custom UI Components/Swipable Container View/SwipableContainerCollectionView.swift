@@ -7,7 +7,7 @@ final class SwipableContainerCollectionView: UICollectionView {
     init(
         view: UIView,
         cellViews: [UIView],
-        axis: SwipableContainerView.SwipeAxis
+        axis: LazySwipableContainerView.SwipeAxis
     ) {
         super.init(
             frame: .zero,

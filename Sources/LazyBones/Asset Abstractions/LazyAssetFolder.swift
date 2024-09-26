@@ -1,5 +1,5 @@
 /// A protocol for defining asset folders.
-public protocol AssetFolder {
+public protocol LazyAssetFolder {
     /// The name of the folder.
     ///
     /// This should correspond to the folder name in your asset catalog.
@@ -8,7 +8,7 @@ public protocol AssetFolder {
 }
 
 /// Represents the absence of a folder in the asset catalog.
-public enum NoFolder: AssetFolder {
+public enum NoFolder: LazyAssetFolder {
     
     case root
     

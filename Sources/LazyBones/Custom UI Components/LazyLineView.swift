@@ -1,7 +1,7 @@
 import UIKit
 
 
-open class LineView: UIView {
+open class LazyLineView: UIView {
     
     
     //----------------------------

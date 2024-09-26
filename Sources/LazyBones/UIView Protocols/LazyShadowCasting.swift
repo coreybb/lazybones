@@ -1,7 +1,7 @@
 import UIKit
 
 
-public protocol ShadowCasting: UIView {
+public protocol LazyShadowCasting: UIView {
     func addDropShadow(
         withOffset offset: CGFloat,
         opacity: CGFloat,
@@ -11,7 +11,7 @@ public protocol ShadowCasting: UIView {
 
 
 //  MARK: - Default Implementation
-public extension ShadowCasting {
+public extension LazyShadowCasting {
     func addDropShadow(
         withOffset offset: CGFloat = 2.5,
         opacity: CGFloat = 0.3,

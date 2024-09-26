@@ -28,7 +28,7 @@ public extension LazyContentStyle {
 
 //  MARK: - Content Context
 public protocol ContentContext {
-    var textColor: any ColorAsset { get }
+    var textColor: any LazyColorAsset { get }
 }
 
 
@@ -42,7 +42,7 @@ public protocol ContentSize {
 
 //  MARK: - Content Type
 public protocol ContentType {
-    var fontAsset: any FontAsset { get }
+    var fontAsset: any LazyFontAsset { get }
     var size: ContentSize { get }
 }
 

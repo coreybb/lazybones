@@ -27,13 +27,13 @@ open class LazyImageView: UIImageView {
     ///   - asset: The image asset to display.
     ///   - contentMode: The content mode for the image view. Defaults to .scaleAspectFit.
     public convenience init(
-        asset: any ImageAsset,
+        asset: any LazyImageAsset,
         contentMode: ContentMode = .scaleAspectFit
     ) {
         self.init(image: asset.image, contentMode: contentMode)
     }
     
     required public init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError()
     }
 }

@@ -1,17 +1,17 @@
 import UIKit
 
 
-public class GradientLayer: CAGradientLayer {
+public class LazyGradientLayer: CAGradientLayer {
     
     
     //  MARK: - Public Properties
-    public let direction: GradientDirection
+    public let direction: LazyGradientDirection
     
 
     //  MARK: - Init
     public init(
         colors: [UIColor],
-        direction: GradientDirection = .leftToRight
+        direction: LazyGradientDirection = .leftToRight
     ) {
         self.direction = direction
         super.init()

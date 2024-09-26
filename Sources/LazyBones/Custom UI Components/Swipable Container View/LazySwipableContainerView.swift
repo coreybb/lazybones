@@ -2,17 +2,17 @@ import UIKit
 
 
 /// A protocol allowing its delegate to receive updates regarding the state of the `SwipableContainerView`.
-public protocol SwipableViewContainerDelegate: AnyObject {
+public protocol LazySwipableViewContainerDelegate: AnyObject {
     func didShowChildView(at index: Int)
 }
 
 
 /// A UIView that allows users to easily swipe between  `childViews`. A `SwipableViewContainer` allows a parent controller to retain its child controllers, and therefore observe and modify their state from a centralized class.
-open class SwipableContainerView: UIView {
+open class LazySwipableContainerView: UIView {
     
     
     //  MARK: - Internal Properties
-    public weak var delegate: SwipableViewContainerDelegate?
+    public weak var delegate: LazySwipableViewContainerDelegate?
     public var axis: SwipeAxis
     public let scrollIsEnabled: Bool
     public let collectionColor: UIColor
@@ -125,7 +125,7 @@ open class SwipableContainerView: UIView {
 
 
 
-extension SwipableContainerView: UICollectionViewDelegate, UICollectionViewDataSource {
+extension LazySwipableContainerView: UICollectionViewDelegate, UICollectionViewDataSource {
     
 
     public func numberOfSections(in collectionView: UICollectionView) -> Int {

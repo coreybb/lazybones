@@ -1,7 +1,7 @@
 import UIKit
 
 
-public enum GradientDirection {
+public enum LazyGradientDirection {
     
     case leftToRight
     case topToBottom
@@ -11,7 +11,7 @@ public enum GradientDirection {
 
 
 //  MARK: - Public API
-public extension GradientDirection {
+public extension LazyGradientDirection {
 
     var startPoint: CGPoint {
         CGPoint(x: startPointX, y: startPointY)
@@ -25,7 +25,7 @@ public extension GradientDirection {
 
 
 //  MARK: - Private API
-extension GradientDirection {
+extension LazyGradientDirection {
 
     private var startPointX: CGFloat {
         
