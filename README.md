@@ -12,4 +12,4 @@ lazybones is a lightweight, easy-to-use UI styling library for lazy iOS develope
 
 ## Installation
 
-Add Lazy Bones to your project using Swift Package Manager.
+Add lazybones to your project using Swift Package Manager.
