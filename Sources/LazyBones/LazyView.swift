@@ -4,7 +4,7 @@ import UIKit
 open class LazyView: UIView {
     
     
-    public private(set) var didLayoutSubviews = false
+    private var didCompleteInitialLayout = false
  
     
     init(
@@ -23,12 +23,12 @@ open class LazyView: UIView {
     
     open override func layoutSubviews() {
         super.layoutSubviews()
-        if didLayoutSubviews { return }
-        didFinishLayoutSubviews()
-        didLayoutSubviews = true
+        if didCompleteInitialLayout { return }
+        didLayoutSubviews()
+        didCompleteInitialLayout = true
     }
     
     
     /// An empty method to be overridden for performing any setup that must run after the `UIView` superclass has laid out its subviews.
-    open func didFinishLayoutSubviews() { }
+    open func didLayoutSubviews() { }
 }
