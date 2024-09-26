@@ -2,8 +2,8 @@ import UIKit
 
 public protocol LazyContentStyle {
     
-    associatedtype CustomContentContext: ContentContext
-    associatedtype CustomContentType: ContentType
+    associatedtype CustomContentContext: LazyContentContext
+    associatedtype CustomContentType: LazyContentType
     
     var context: CustomContentContext { get }
     var type: CustomContentType { get }
@@ -27,23 +27,23 @@ public extension LazyContentStyle {
 
 
 //  MARK: - Content Context
-public protocol ContentContext {
+public protocol LazyContentContext {
     var textColor: any LazyColorAsset { get }
 }
 
 
 
 //  MARK: - Content Size
-public protocol ContentSize {
+public protocol LazyContentSize {
     var pointSize: CGFloat { get }
 }
 
 
 
 //  MARK: - Content Type
-public protocol ContentType {
+public protocol LazyContentType {
     var fontAsset: any LazyFontAsset { get }
-    var size: ContentSize { get }
+    var size: LazyContentSize { get }
 }
 
 
