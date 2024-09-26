@@ -1,8 +1,8 @@
 import UIKit
 
 open class LazyViewController: UIViewController {
-    
-    init() {
+
+    public init() {
         super.init(nibName: nil, bundle: nil)
     }
     
