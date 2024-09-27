@@ -16,11 +16,11 @@ open class LazyView: UIView {
     ///     If true, `translatesAutoresizingMaskIntoConstraints` is set to false. Defaults to false.
     public init(
         color: UIColor? = nil,
-        usesAutolayout: Bool = false
+        usesAutoLayout: Bool = false
     ) {
         super.init(frame: .zero)
         self.backgroundColor = color
-        self.translatesAutoresizingMaskIntoConstraints = !usesAutolayout
+        self.translatesAutoresizingMaskIntoConstraints = !usesAutoLayout
     }
     
     
@@ -28,9 +28,10 @@ open class LazyView: UIView {
     /// - Parameter coder: An unarchiver object.
     /// - Returns: This initializer always fails and triggers a fatal error.
     @available(*, unavailable, message: "Loading this view from a nib is unsupported in favor of programmatic UI.")
-    required public init?(coder aDecoder: NSCoder) {
+    required public init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
     
     
     open override func layoutSubviews() {
