@@ -11,7 +11,7 @@ public protocol LazyContentStyle {
     var font: UIFont { get }
     var textColor: UIColor { get }
     
-    init(_ context: CustomContentContext, _ type: CustomContentType)
+    init(context: CustomContentContext, type: CustomContentType)
 }
 
 
