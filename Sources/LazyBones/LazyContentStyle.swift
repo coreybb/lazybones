@@ -10,6 +10,8 @@ public protocol LazyContentStyle {
     
     var font: UIFont { get }
     var textColor: UIColor { get }
+    
+    init(_ context: CustomContentContext, _ type: CustomContentType)
 }
 
 
@@ -130,10 +132,6 @@ public protocol LazyContentType {
 ///         // Add labels to view hierarchy and set up constraints
 ///         view.addSubview(titleLabel)
 ///         view.addSubview(bodyLabel)
-///
-///         // Set up constraints (using Auto Layout)
-///         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-///         bodyLabel.translatesAutoresizingMaskIntoConstraints = false
 ///
 ///         NSLayoutConstraint.activate([
 ///             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
