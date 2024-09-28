@@ -10,8 +10,6 @@ public protocol LazyContentStyle {
     
     var font: UIFont { get }
     var textColor: UIColor { get }
-    
-    init(context: CustomContentContext, type: CustomContentType)
 }
 
 
