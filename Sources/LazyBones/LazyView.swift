@@ -16,7 +16,7 @@ open class LazyView: UIView {
     ///     If true, `translatesAutoresizingMaskIntoConstraints` is set to false. Defaults to false.
     public init(
         color: UIColor? = nil,
-        usesAutoLayout: Bool = false
+        usesAutoLayout: Bool = true
     ) {
         super.init(frame: .zero)
         self.backgroundColor = color
